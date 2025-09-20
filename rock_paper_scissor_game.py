@@ -18,6 +18,10 @@ inputs.
 import random
 import pwinput
 
+ROCK = 'r'
+PAPER = 'p'
+SCISSORS = 's'
+
 
 def user_consent():  # Asks the user if he wants to play the game or not
 
@@ -106,8 +110,8 @@ def game_rules_against_comp():  # Main game logic
     draw = 0
     games_played = 0
 
-    letters = {'r': 'Rock''🪨', 'p': 'Paper''📃', 's': 'Scissor''✂️'}
-    word = ['r', 'p', 's']
+    letters = {ROCK: 'Rock''🪨', PAPER: 'Paper''📃', SCISSORS: 'Scissor''✂️'}
+    word = [ROCK, PAPER, SCISSORS]
 
     while p1_wins < winner and p2_wins < winner and games_played != int(games):
         comp = random.choice(word)
@@ -128,9 +132,9 @@ def game_rules_against_comp():  # Main game logic
             print(
                 f"\nUser wins: {p1_wins}\nComputer wins: {p2_wins}\nGames Played = {games_played}")
 
-        elif ((user == 'r' and comp == 's')
-                or (user == 'p' and comp == 'r')
-                or (user == 's' and comp == 'p')):
+        elif ((user == ROCK and comp == SCISSORS)
+                or (user == PAPER and comp == ROCK)
+                or (user == SCISSORS and comp == PAPER)):
             print(
                 f"\nUser choice: {letters[user]}\nComputer choice: {letters[comp]}")
             print(f"\n{letters[user]} BEATS {letters[comp]}\nYou Win!!!")
@@ -141,9 +145,9 @@ def game_rules_against_comp():  # Main game logic
             print(
                 f"\nUser wins: {p1_wins}\nComputer wins: {p2_wins}\nGames Played = {games_played}")
 
-        elif ((user == 'r' and comp == 'p')
-                or (user == 'p' and comp == 's')
-                or (user == 's' and comp == 'r')):
+        elif ((user == ROCK and comp == PAPER)
+                or (user == PAPER and comp == SCISSORS)
+                or (user == SCISSORS and comp == ROCK)):
             print(
                 f"\nUser choice: {letters[user]}\nComputer choice: {letters[comp]}")
             print(f"\n{letters[comp]} BEATS {letters[user]}\nYou LOSE!!!")
@@ -170,7 +174,7 @@ def game_rules_pvp():
     draw = 0
     games_played = 0
 
-    letters = {'r': 'Rock''🪨', 'p': 'Paper''📃', 's': 'Scissor''✂️'}
+    letters = {ROCK: 'Rock''🪨', PAPER: 'Paper''📃', SCISSORS: 'Scissor''✂️'}
     word = tuple(letters.keys())
 
     while p1_wins < winner and p2_wins < winner and games_played != int(games):
@@ -198,9 +202,9 @@ def game_rules_pvp():
             else:
                 print()
 
-        elif ((player_1 == 'r' and player_2 == 's')
-                or (player_1 == 'p' and player_2 == 'r')
-                or (player_1 == 's' and player_2 == 'p')):
+        elif ((player_1 == ROCK and player_2 == SCISSORS)
+                or (player_1 == PAPER and player_2 == ROCK)
+                or (player_1 == SCISSORS and player_2 == PAPER)):
             print(
                 f"\nPlayer-1 choice: {letters[player_1]}\nPlayer-2 choice: {letters[player_2]}")
             print(
@@ -212,9 +216,9 @@ def game_rules_pvp():
             print(
                 f"\nPlayer-1 wins: {p1_wins}\nPlayer-2 wins: {p2_wins}\nGames Played = {games_played}")
 
-        elif ((player_1 == 'r' and player_2 == 'p')
-                or (player_1 == 'p' and player_2 == 's')
-                or (player_1 == 's' and player_2 == 'r')):
+        elif ((player_1 == ROCK and player_2 == PAPER)
+                or (player_1 == PAPER and player_2 == SCISSORS)
+                or (player_1 == SCISSORS and player_2 == ROCK)):
             print(
                 f"\nPlayer-1 choice: {letters[player_1]}\nPlayer-2 choice: {letters[player_2]}")
             print(
